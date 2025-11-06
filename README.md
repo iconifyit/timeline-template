@@ -5,12 +5,16 @@ A beautiful, single-page, scrollable career timeline built with Tailwind CSS and
 ## Features
 
 - **Smooth Scroll Animations**: Timeline items fade in as you scroll down the page
+- **Dual Timeline Structure**:
+  - **Date Nodes**: Cyan-colored cards with dates and job details from your resume
+  - **Narrative Nodes**: Story-driven cards that weave context and personality between jobs
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
 - **Modern UI**: Built with Tailwind CSS for a clean, professional look
 - **Alternating Layout**: Timeline events alternate between left and right for visual interest
 - **Placeholder Images**: Uses Unsplash images that you can easily replace with your own
 - **Gradient Accents**: Eye-catching gradient colors for headers and highlights
 - **Interactive Cards**: Hover effects on timeline cards for better engagement
+- **Visual Hierarchy**: Distinct styling for date nodes (cyan border + gradient badge) vs narrative nodes (purple/pink accents)
 
 ## Quick Start
 
@@ -37,16 +41,47 @@ Replace with your own images:
   ```
 - **Option 3**: Keep using Unsplash but search for better matches at [unsplash.com](https://unsplash.com)
 
+### Understanding the Two Types of Nodes
+
+The timeline uses two distinct types of nodes:
+
+**1. Date Nodes (Job Experience)**
+- Cyan/teal colored with gradient date badges
+- Larger timeline dots with a cyan border and glow effect
+- Contains: dates, company, location, job title, and bullet points
+- Uses the `date-node` class for the cyan left border
+- Uses the `timeline-dot-date` class for the larger timeline dot
+
+**2. Narrative Nodes (Story Elements)**
+- Purple, pink, orange, or other accent colors
+- Standard blue timeline dots
+- Contains: stories, reflections, and context that connect the jobs
+- Uses standard `timeline-dot` class
+
 ### Modifying Content
 
-Each timeline event is contained in a `timeline-item` div. The structure is:
+**Date Node Structure:**
+```html
+<div class="timeline-item mb-32 relative">
+    <div class="timeline-dot-date hidden md:block"></div>
+    <div class="md:w-1/2 md:ml-auto md:pl-12">
+        <div class="bg-white rounded-lg p-8 card-shadow date-node">
+            <div class="date-badge text-white px-4 py-2 rounded-lg inline-block mb-4">
+                <div class="text-sm font-semibold">Jun 1999 – Jul 2007</div>
+            </div>
+            <!-- Image, job title, company, bullet points -->
+        </div>
+    </div>
+</div>
+```
 
+**Narrative Node Structure:**
 ```html
 <div class="timeline-item mb-32 relative">
     <div class="timeline-dot hidden md:block"></div>
-    <div class="md:w-1/2 md:ml-auto md:pl-12"> <!-- or md:pr-12 for left-aligned -->
+    <div class="md:w-1/2 md:pr-12">
         <div class="bg-white rounded-lg p-8 card-shadow">
-            <!-- Your content here -->
+            <!-- Image, badge, story content -->
         </div>
     </div>
 </div>

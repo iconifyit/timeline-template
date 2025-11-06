@@ -50,8 +50,21 @@
             z-index: 10;
         }
 
+        .timeline-dot-date {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            border: 5px solid #06b6d4;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.2);
+        }
+
         @media (max-width: 768px) {
-            .timeline-dot {
+            .timeline-dot, .timeline-dot-date {
                 left: 30px;
             }
         }
@@ -75,6 +88,14 @@
         .card-shadow:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .date-node {
+            border-left: 4px solid #06b6d4;
+        }
+
+        .date-badge {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
         }
     </style>
 </head>
@@ -158,8 +179,8 @@
                         </span>
                         <h3 class="text-3xl font-bold text-gray-800 mb-4">From Artist to Engineer</h3>
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            I didn't start as an engineer. I studied graphic design and spent my early career in print. But I quickly
-                            realized that static design wasn't enough — I wanted to <em>build</em> things that moved and did something.
+                            I didn't start as an engineer. I studied graphic design at East Carolina University and spent my early career in print.
+                            But I quickly realized that static design wasn't enough — I wanted to <em>build</em> things that moved and did something.
                         </p>
                         <p class="text-gray-700 leading-relaxed">
                             At a catalog company, I taught myself AppleScript and automated a three-month production process down to
@@ -169,28 +190,84 @@
                 </div>
             </div>
 
-            <!-- Catalyst Workflow Solutions -->
+            <!-- DATE NODE: Catalyst Workflow Solutions -->
             <div class="timeline-item mb-32 relative">
-                <div class="timeline-dot hidden md:block"></div>
+                <div class="timeline-dot-date hidden md:block"></div>
                 <div class="md:w-1/2 md:ml-auto md:pl-12">
-                    <div class="bg-white rounded-lg p-8 card-shadow">
+                    <div class="bg-white rounded-lg p-8 card-shadow date-node">
+                        <div class="date-badge text-white px-4 py-2 rounded-lg inline-block mb-4">
+                            <div class="text-sm font-semibold">Jun 1999 – Jul 2007</div>
+                        </div>
                         <div class="mb-6">
                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
                                  alt="Catalyst Workflow Solutions"
                                  class="w-full h-48 object-cover rounded-lg">
                         </div>
-                        <span class="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
-                            Entrepreneurship
-                        </span>
-                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Catalyst Workflow Solutions</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            I started a small automation business, building custom production systems and early content management tools.
-                            My custom CMS had over <strong>75,000 downloads</strong> before I let it go — a great product I simply didn't
-                            know how to market at the time.
-                        </p>
-                        <p class="text-gray-700 leading-relaxed">
-                            That lesson still drives me: never walk away from a good idea too soon.
-                        </p>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-2">Catalyst Workflow Solutions</h3>
+                        <p class="text-lg text-cyan-700 mb-4 font-semibold">Self-employed | Richmond, Virginia</p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Built a system to automate 100+ custom jewelry catalogs, reducing a 3-month process to 2 weeks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Developed a 600-page medical supply catalog automation tool used by a 12-person design team, integrating product data and images for end-to-end print production in under 2 weeks</span>
+                            </li>
+                        </ul>
+                        <div class="bg-cyan-50 rounded-lg p-4 border-l-4 border-cyan-500">
+                            <p class="text-gray-700 leading-relaxed mb-2">
+                                <strong>The CMS that got away:</strong> I also built custom content management tools during this period.
+                                My custom CMS had over <strong>75,000 downloads</strong> before I let it go — a great product I simply didn't
+                                know how to market at the time.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed italic">
+                                That lesson still drives me: never walk away from a good idea too soon.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DATE NODE: Cavalier TV & Telephone -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot-date hidden md:block"></div>
+                <div class="md:w-1/2 md:pr-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow date-node">
+                        <div class="date-badge text-white px-4 py-2 rounded-lg inline-block mb-4">
+                            <div class="text-sm font-semibold">Jul 2007 – Aug 2008</div>
+                        </div>
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
+                                 alt="Cavalier TV & Telephone"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-2">Lead Web Developer</h3>
+                        <p class="text-lg text-cyan-700 mb-4 font-semibold">Cavalier TV & Telephone | Richmond, Virginia</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Built and maintained public-facing web applications for sales and customer acquisition</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Doubled online conversion rate by developing a predictive service-eligibility app using geolocation and customer data</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Automated migration of 100,000 email accounts from in-house system to Google for Business (Gmail)</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -198,30 +275,108 @@
             <!-- From Builder to Problem Solver -->
             <div class="timeline-item mb-32 relative">
                 <div class="timeline-dot hidden md:block"></div>
-                <div class="md:w-1/2 md:pr-12">
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
                         <div class="mb-6">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop"
                                  alt="From Builder to Problem Solver"
                                  class="w-full h-48 object-cover rounded-lg">
                         </div>
                         <span class="inline-block bg-orange-100 text-orange-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
-                            Web Development
+                            Problem Solving
                         </span>
-                        <h3 class="text-3xl font-bold text-gray-800 mb-4">From Builder to Problem Solver</h3>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">The KNN Story</h3>
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            Over the next several years, I shifted from design automation to full-stack web development, building sites
-                            and apps for clients large and small.
+                            My proudest technical moment at Cavalier came when a third-party API for checking service availability
+                            proved too slow — killing our conversion funnel before customers could even sign up.
                         </p>
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            My proudest technical moment came while working at a telecom company: I used a <strong>K-Nearest Neighbor
-                            algorithm</strong> to predict service availability after a third-party API proved too slow. The result?
-                            Online conversions doubled overnight.
+                            I implemented a <strong>K-Nearest Neighbor algorithm</strong> to predict service availability using
+                            geolocation and historical customer data. The result? <strong>Online conversions doubled overnight.</strong>
                         </p>
                         <p class="text-gray-700 leading-relaxed">
                             That experience taught me what I love most — solving real-world problems through smart automation and
-                            creative engineering.
+                            creative engineering. Sometimes the best solution isn't waiting for the API to respond — it's building
+                            your own intelligence layer.
                         </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DATE NODE: ICF International -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot-date hidden md:block"></div>
+                <div class="md:w-1/2 md:pr-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow date-node">
+                        <div class="date-badge text-white px-4 py-2 rounded-lg inline-block mb-4">
+                            <div class="text-sm font-semibold">Aug 2008 – Jun 2015</div>
+                        </div>
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop"
+                                 alt="ICF International"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-2">Technical Lead / Solutions Architect</h3>
+                        <p class="text-lg text-cyan-700 mb-4 font-semibold">ICF International | Richmond, Virginia</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Technical lead on 90+ DoD and US Navy websites, including large-scale content migrations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Led rebuilds for major nonprofit and financial services clients</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Architected enterprise CMS solutions (AEM, WordPress, Oracle WCC, Drupal) for federal and Fortune 500 clients</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DATE NODE: Iconfinder -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot-date hidden md:block"></div>
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow date-node">
+                        <div class="date-badge text-white px-4 py-2 rounded-lg inline-block mb-4">
+                            <div class="text-sm font-semibold">Jun 2015 – Jan 2018</div>
+                        </div>
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=400&fit=crop"
+                                 alt="Iconfinder"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-2">Senior Software Engineer</h3>
+                        <p class="text-lg text-cyan-700 mb-4 font-semibold">Iconfinder.com | Copenhagen, Denmark</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Scaled ingestion pipelines to handle 10K+ products/day, growing inventory from 500K to 6M</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Helped drive $1M+ annual revenue growth with a team of 5</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Represented team at design/tech industry events</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -229,10 +384,10 @@
             <!-- From Developer to Architect -->
             <div class="timeline-item mb-32 relative">
                 <div class="timeline-dot hidden md:block"></div>
-                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                <div class="md:w-1/2 md:pr-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
                         <div class="mb-6">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop"
+                            <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=400&fit=crop"
                                  alt="From Developer to Architect"
                                  class="w-full h-48 object-cover rounded-lg">
                         </div>
@@ -241,40 +396,56 @@
                         </span>
                         <h3 class="text-3xl font-bold text-gray-800 mb-4">From Developer to Architect</h3>
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            My CMS and web work opened the door to enterprise consulting, where I led major CMS rebuilds for federal
-                            and Fortune 500 clients.
+                            My CMS and web work opened the door to enterprise consulting at ICF, where I led major rebuilds
+                            for federal and Fortune 500 clients. Working with Adobe Experience Manager, WordPress, Oracle WebCenter,
+                            and Drupal taught me how to think at scale — migrating content, architecting solutions, and leading
+                            technical teams across 90+ websites.
                         </p>
                         <p class="text-gray-700 leading-relaxed">
-                            Later, I joined <strong>Iconfinder</strong>, a Danish startup, where I helped scale ingestion pipelines
-                            to handle <strong>10,000+ products per day</strong>, growing inventory from half a million to over six
-                            million assets.
+                            Joining Iconfinder in Denmark was a shift from enterprise to startup — but it was exactly what I needed.
+                            I helped scale their platform from half a million to over six million assets, processing thousands of
+                            products daily, and contributing to over $1M in annual revenue growth. It reminded me why I fell in love
+                            with building software: the ability to create something that grows and impacts real people.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Capital One -->
+            <!-- DATE NODE: Independent Consultant -->
             <div class="timeline-item mb-32 relative">
-                <div class="timeline-dot hidden md:block"></div>
-                <div class="md:w-1/2 md:pr-12">
-                    <div class="bg-white rounded-lg p-8 card-shadow">
+                <div class="timeline-dot-date hidden md:block"></div>
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow date-node">
+                        <div class="date-badge text-white px-4 py-2 rounded-lg inline-block mb-4">
+                            <div class="text-sm font-semibold">Jan 2018 – Mar 2020</div>
+                        </div>
                         <div class="mb-6">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop"
-                                 alt="Capital One"
+                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=400&fit=crop"
+                                 alt="Independent Consultant"
                                  class="w-full h-48 object-cover rounded-lg">
                         </div>
-                        <span class="inline-block bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
-                            Current Role
-                        </span>
-                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Capital One</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            Today, I'm at <strong>Capital One</strong>, building event-driven AWS systems that audit over 1.5 million
-                            IAM roles nightly to ensure compliance and security.
-                        </p>
-                        <p class="text-gray-700 leading-relaxed">
-                            It's technically challenging work — and important — but most of what we build is invisible. I miss creating
-                            things that people <em>see and feel</em>.
-                        </p>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-2">Independent Consultant</h3>
+                        <p class="text-lg text-cyan-700 mb-4 font-semibold">Web & Cloud Solutions | Richmond, Virginia</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Managed a team of 4 devs to build and launch VectorIcons.net, a multi-vendor e-commerce marketplace</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Built a serverless, event-driven pipeline integrating AWS and Dropbox for a high-volume UK creative agency, aggregating, converting, and organizing 200–300 POS proofs per day</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Built e-commerce platforms, CMS integrations, and creative tooling (Figma/Adobe plugins) using Node.js and React</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -282,7 +453,7 @@
             <!-- VectorIcons.net -->
             <div class="timeline-item mb-32 relative">
                 <div class="timeline-dot hidden md:block"></div>
-                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                <div class="md:w-1/2 md:pr-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
                         <div class="mb-6">
                             <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=400&fit=crop"
@@ -294,13 +465,92 @@
                         </span>
                         <h3 class="text-3xl font-bold text-gray-800 mb-4">VectorIcons.net</h3>
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            That's why I started <strong>VectorIcons.net</strong>, a multi-vendor marketplace for vector icons and
-                            illustrations. It's built on Next.js and Express, deployed on AWS with a serverless image-processing
-                            pipeline I designed myself.
+                            During my consulting years, I built <strong>VectorIcons.net</strong> — a multi-vendor marketplace for
+                            vector icons and illustrations. It's built on Next.js and Express, deployed on AWS with a serverless
+                            image-processing pipeline I designed myself.
                         </p>
                         <p class="text-gray-700 leading-relaxed">
-                            It's both a passion project and a living lab where I test new technologies, architectures, and ideas —
-                            all centered around making creative work faster and more enjoyable.
+                            More than just a business, it's a living lab where I test new technologies, architectures, and ideas —
+                            all centered around making creative work faster and more enjoyable. It's also a reminder of that lesson
+                            from my CMS days: don't walk away from a good idea too soon.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DATE NODE: Capital One -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot-date hidden md:block"></div>
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow date-node">
+                        <div class="date-badge text-white px-4 py-2 rounded-lg inline-block mb-4">
+                            <div class="text-sm font-semibold">Mar 2020 – Present</div>
+                        </div>
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop"
+                                 alt="Capital One"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-2">Senior Software Engineer</h3>
+                        <p class="text-lg text-cyan-700 mb-4 font-semibold">Capital One Finance | Richmond, Virginia</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Engineered AWS IAM auditing solutions to maintain least-privileged security posture, using event-driven Go applications with SQS, Lambda, and Step Functions to monitor over 1M IAM roles nightly</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Managed data pipelines streaming millions of rows daily</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Built custom Go tooling to improve developer experience</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Led code reviews, Agile ceremonies, and participated in quarterly on-call rotations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-cyan-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-gray-700">Managed multiple application stacks in CloudFormation Templates</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capital One Reflection -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot hidden md:block"></div>
+                <div class="md:w-1/2 md:pr-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow">
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=400&fit=crop"
+                                 alt="Looking Forward"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <span class="inline-block bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                            Reflection
+                        </span>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">The Invisible Work</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            My work at Capital One is technically challenging and important. Ensuring security compliance across
+                            over a million IAM roles is critical infrastructure work that keeps systems safe and running smoothly.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            But most of what we build is invisible. No one sees it, no one touches it directly. I miss creating
+                            things that people <em>see and feel</em> — tools that make their daily work easier, more intuitive,
+                            more human. That's why I keep building VectorIcons.net. That's why Expensify resonates with me.
                         </p>
                     </div>
                 </div>
@@ -309,7 +559,7 @@
             <!-- Why Expensify -->
             <div class="timeline-item mb-32 relative">
                 <div class="timeline-dot hidden md:block"></div>
-                <div class="md:w-1/2 md:pr-12">
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
                         <div class="mb-6">
                             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=400&fit=crop"
@@ -324,6 +574,11 @@
                             Expensify's mission — helping people spend less time on tedious work and more on what matters — speaks
                             to the very core of what drives me. You're solving the same problem I've been obsessed with my whole
                             career: freeing people to focus on creativity, impact, and meaning.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            From automating catalog production to building IAM auditing systems, I've always been drawn to eliminating
+                            friction and letting people do what they do best. That's what Expensify does at scale — and I want to be
+                            part of that mission.
                         </p>
                         <p class="text-gray-700 leading-relaxed">
                             On a personal level, my wife and I are moving to <strong>France</strong> next year — a dream we've been
@@ -341,7 +596,7 @@
             <!-- Closing -->
             <div class="timeline-item mb-20 relative">
                 <div class="timeline-dot hidden md:block" style="border-color: #ec4899;"></div>
-                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                <div class="md:w-1/2 md:pr-12">
                     <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg p-8 card-shadow text-white">
                         <h3 class="text-3xl font-bold mb-4">Let's Build Something Great</h3>
                         <p class="leading-relaxed mb-6">
