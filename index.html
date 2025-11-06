@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scott Lewis - Career Timeline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3b82f6, #8b5cf6, #ec4899);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 30px;
+            }
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid #3b82f6;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 scroll-smooth">
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 py-20">
+        <div class="text-center max-w-4xl mx-auto timeline-item">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 gradient-text">Scott Lewis</h1>
+            <p class="text-2xl md:text-3xl text-gray-700 mb-4">From Artist to Engineer</p>
+            <p class="text-xl text-gray-600 mb-8">A Journey Through Creativity, Automation & Innovation</p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <a href="https://sketchandbuild.com" target="_blank" class="text-blue-600 hover:text-blue-700 underline">sketchandbuild.com</a>
+                <span class="text-gray-400">|</span>
+                <a href="https://vectoricons.net" target="_blank" class="text-blue-600 hover:text-blue-700 underline">vectoricons.net</a>
+                <span class="text-gray-400">|</span>
+                <a href="https://www.linkedin.com/in/scott-lewis-full-stack/" target="_blank" class="text-blue-600 hover:text-blue-700 underline">LinkedIn</a>
+                <span class="text-gray-400">|</span>
+                <a href="https://github.com/iconifyit" target="_blank" class="text-blue-600 hover:text-blue-700 underline">GitHub</a>
+            </div>
+
+            <div class="bg-white rounded-lg p-8 card-shadow max-w-3xl mx-auto">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Application for Full Stack Engineer – Expensify</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    I'm applying for the Full Stack Engineer role you posted on LinkedIn. You said you don't really read résumés,
+                    but mine's attached just in case. You can also check out my work online or explore this interactive timeline below
+                    to see my journey from graphic designer to full-stack engineer.
+                </p>
+            </div>
+
+            <div class="mt-12">
+                <svg class="w-8 h-8 mx-auto text-blue-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="relative py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <!-- Timeline Line -->
+            <div class="timeline-line hidden md:block"></div>
+
+            <!-- The Through-Line -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot hidden md:block"></div>
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow">
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop"
+                                 alt="The Through-Line"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                            The Mission
+                        </span>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">The Through-Line</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            I've spent my career chasing one simple idea: let computers handle the tedium so people can focus on
+                            creativity, ideas, and progress. That's why Expensify immediately resonated with me — your mission
+                            aligns perfectly with what I've been building toward my entire professional life.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- From Artist to Engineer -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot hidden md:block"></div>
+                <div class="md:w-1/2 md:pr-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow">
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800&h=400&fit=crop"
+                                 alt="From Artist to Engineer"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <span class="inline-block bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                            The Beginning
+                        </span>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">From Artist to Engineer</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            I didn't start as an engineer. I studied graphic design and spent my early career in print. But I quickly
+                            realized that static design wasn't enough — I wanted to <em>build</em> things that moved and did something.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            At a catalog company, I taught myself AppleScript and automated a three-month production process down to
+                            two weeks. I literally coded myself out of a job — but it set my career in motion.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catalyst Workflow Solutions -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot hidden md:block"></div>
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow">
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
+                                 alt="Catalyst Workflow Solutions"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <span class="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                            Entrepreneurship
+                        </span>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Catalyst Workflow Solutions</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            I started a small automation business, building custom production systems and early content management tools.
+                            My custom CMS had over <strong>75,000 downloads</strong> before I let it go — a great product I simply didn't
+                            know how to market at the time.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            That lesson still drives me: never walk away from a good idea too soon.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- From Builder to Problem Solver -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot hidden md:block"></div>
+                <div class="md:w-1/2 md:pr-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow">
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
+                                 alt="From Builder to Problem Solver"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <span class="inline-block bg-orange-100 text-orange-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                            Web Development
+                        </span>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">From Builder to Problem Solver</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Over the next several years, I shifted from design automation to full-stack web development, building sites
+                            and apps for clients large and small.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            My proudest technical moment came while working at a telecom company: I used a <strong>K-Nearest Neighbor
+                            algorithm</strong> to predict service availability after a third-party API proved too slow. The result?
+                            Online conversions doubled overnight.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            That experience taught me what I love most — solving real-world problems through smart automation and
+                            creative engineering.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- From Developer to Architect -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot hidden md:block"></div>
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow">
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop"
+                                 alt="From Developer to Architect"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                            Enterprise Scale
+                        </span>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">From Developer to Architect</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            My CMS and web work opened the door to enterprise consulting, where I led major CMS rebuilds for federal
+                            and Fortune 500 clients.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Later, I joined <strong>Iconfinder</strong>, a Danish startup, where I helped scale ingestion pipelines
+                            to handle <strong>10,000+ products per day</strong>, growing inventory from half a million to over six
+                            million assets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capital One -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot hidden md:block"></div>
+                <div class="md:w-1/2 md:pr-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow">
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop"
+                                 alt="Capital One"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <span class="inline-block bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                            Current Role
+                        </span>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Capital One</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Today, I'm at <strong>Capital One</strong>, building event-driven AWS systems that audit over 1.5 million
+                            IAM roles nightly to ensure compliance and security.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            It's technically challenging work — and important — but most of what we build is invisible. I miss creating
+                            things that people <em>see and feel</em>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VectorIcons.net -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot hidden md:block"></div>
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow">
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=400&fit=crop"
+                                 alt="VectorIcons.net"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <span class="inline-block bg-pink-100 text-pink-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                            Side Project
+                        </span>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">VectorIcons.net</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            That's why I started <strong>VectorIcons.net</strong>, a multi-vendor marketplace for vector icons and
+                            illustrations. It's built on Next.js and Express, deployed on AWS with a serverless image-processing
+                            pipeline I designed myself.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            It's both a passion project and a living lab where I test new technologies, architectures, and ideas —
+                            all centered around making creative work faster and more enjoyable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Expensify -->
+            <div class="timeline-item mb-32 relative">
+                <div class="timeline-dot hidden md:block"></div>
+                <div class="md:w-1/2 md:pr-12">
+                    <div class="bg-white rounded-lg p-8 card-shadow">
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=400&fit=crop"
+                                 alt="Why Expensify"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mb-4">
+                            The Perfect Fit
+                        </span>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Why Expensify</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Expensify's mission — helping people spend less time on tedious work and more on what matters — speaks
+                            to the very core of what drives me. You're solving the same problem I've been obsessed with my whole
+                            career: freeing people to focus on creativity, impact, and meaning.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            On a personal level, my wife and I are moving to <strong>France</strong> next year — a dream we've been
+                            building toward for years. I've studied French since I was 15 (currently around B1/B2 level), and I'm
+                            excited by the idea of joining a globally distributed team that values autonomy, curiosity, and impact
+                            over geography.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-4 italic">
+                            Je parle français — pas couramment, mais j'y travaille !
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Closing -->
+            <div class="timeline-item mb-20 relative">
+                <div class="timeline-dot hidden md:block" style="border-color: #ec4899;"></div>
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                    <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg p-8 card-shadow text-white">
+                        <h3 class="text-3xl font-bold mb-4">Let's Build Something Great</h3>
+                        <p class="leading-relaxed mb-6">
+                            I'd love the chance to bring my experience and builder's mindset to Expensify — helping to craft tools
+                            that make people's work easier, more intuitive, and more human.
+                        </p>
+                        <p class="leading-relaxed mb-6">
+                            I'm available to start immediately.
+                        </p>
+                        <p class="text-xl font-semibold">
+                            Thank you for considering my application.
+                        </p>
+                        <p class="mt-6 text-2xl font-bold">
+                            – Scott Lewis
+                        </p>
+                        <div class="flex flex-wrap gap-4 mt-6">
+                            <a href="https://sketchandbuild.com" target="_blank"
+                               class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                                sketchandbuild.com
+                            </a>
+                            <a href="https://vectoricons.net" target="_blank"
+                               class="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                                vectoricons.net
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-gray-400 mb-4">
+                Built with Tailwind CSS • Animated Timeline Template
+            </p>
+            <p class="text-gray-500 text-sm">
+                © 2024 Scott Lewis. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all timeline items
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
