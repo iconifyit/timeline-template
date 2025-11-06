@@ -2,7 +2,18 @@
 
 A beautiful, single-page, scrollable career timeline built with Tailwind CSS and smooth scroll animations. Perfect for showcasing your professional journey in an interactive and engaging way.
 
-## Features
+## Two Versions Available
+
+This repository contains two timeline versions:
+
+1. **Photo-Rich Version** (`index.html`) - Modern design with images, gradients, and animations
+2. **Minimal Version** (`index-minimal.html`) - Clean, text-only design with Bootstrap 3 (see [README-MINIMAL.md](README-MINIMAL.md))
+
+Choose the version that best fits your style!
+
+---
+
+## Photo-Rich Version Features
 
 - **Smooth Scroll Animations**: Timeline items fade in as you scroll down the page
 - **Interactive Filter Toggle**: Show/hide different types of timeline content

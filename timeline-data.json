@@ -1,0 +1,177 @@
+{
+  "header": {
+    "name": "Scott Lewis",
+    "subtitle": "From Artist to Engineer",
+    "links": [
+      {"text": "sketchandbuild.com", "url": "https://sketchandbuild.com"},
+      {"text": "vectoricons.net", "url": "https://vectoricons.net"},
+      {"text": "LinkedIn", "url": "https://www.linkedin.com/in/scott-lewis-full-stack/"},
+      {"text": "GitHub", "url": "https://github.com/iconifyit"}
+    ]
+  },
+  "intro": {
+    "title": "Application for Full Stack Engineer – Expensify",
+    "description": "I'm applying for the Full Stack Engineer role you posted on LinkedIn. Explore this interactive timeline below to see my journey from graphic designer to full-stack engineer."
+  },
+  "timeline": [
+    {
+      "type": "narrative",
+      "info": "The Mission",
+      "title": "The Through-Line",
+      "content": "<p>I've spent my career chasing one simple idea: let computers handle the tedium so people can focus on creativity, ideas, and progress. That's why Expensify immediately resonated with me — your mission aligns perfectly with what I've been building toward my entire professional life.</p>"
+    },
+    {
+      "type": "narrative",
+      "info": "The Beginning",
+      "title": "From Artist to Engineer",
+      "content": "<p>I didn't start as an engineer. I studied graphic design at East Carolina University and spent my early career in print. But I quickly realized that static design wasn't enough — I wanted to <em>build</em> things that moved and did something.</p><p>At a catalog company, I taught myself AppleScript and automated a three-month production process down to two weeks. I literally coded myself out of a job — but it set my career in motion.</p>"
+    },
+    {
+      "type": "period",
+      "title": "1999 – 2007"
+    },
+    {
+      "type": "factoid",
+      "info": "~1998-2000",
+      "title": "QuarkXPress in the Browser",
+      "content": "<p>Before React, before modern web frameworks, I was experimenting with building QuarkXPress-like document layouts directly in the browser. This was the era of IE6 and table-based layouts — the idea of rich document editing in a browser was considered impossible.</p><p class=\"factoid-note\">The PoC never shipped, but it taught me to question conventional wisdom about what browsers could do. Ten years later, tools like Google Docs proved the concept at scale.</p>"
+    },
+    {
+      "type": "date",
+      "info": "Jun 1999 – Jul 2007",
+      "title": "Catalyst Workflow Solutions",
+      "jobTitle": "Self-employed | Richmond, Virginia",
+      "bullets": [
+        "Built a system to automate 100+ custom jewelry catalogs, reducing a 3-month process to 2 weeks",
+        "Developed a 600-page medical supply catalog automation tool used by a 12-person design team, integrating product data and images for end-to-end print production in under 2 weeks",
+        "Built custom CMS with over 75,000 downloads before discontinuing — a great product I simply didn't know how to market at the time"
+      ],
+      "lesson": "<strong>Lesson learned:</strong> Never walk away from a good idea too soon."
+    },
+    {
+      "type": "period",
+      "title": "2007 – 2008"
+    },
+    {
+      "type": "date",
+      "info": "Jul 2007 – Aug 2008",
+      "title": "Lead Web Developer",
+      "jobTitle": "Cavalier TV & Telephone | Richmond, Virginia",
+      "bullets": [
+        "Built and maintained public-facing web applications for sales and customer acquisition",
+        "Doubled online conversion rate by developing a predictive service-eligibility app using geolocation and customer data",
+        "Automated migration of 100,000 email accounts from in-house system to Google for Business (Gmail)"
+      ]
+    },
+    {
+      "type": "narrative",
+      "info": "Problem Solving",
+      "title": "The KNN Story",
+      "content": "<p>My proudest technical moment at Cavalier came when a third-party API for checking service availability proved too slow — killing our conversion funnel before customers could even sign up.</p><p>I implemented a <strong>K-Nearest Neighbor algorithm</strong> to predict service availability using geolocation and historical customer data. The result? <strong>Online conversions doubled overnight.</strong></p><p>That experience taught me what I love most — solving real-world problems through smart automation and creative engineering. Sometimes the best solution isn't waiting for the API to respond — it's building your own intelligence layer.</p>"
+    },
+    {
+      "type": "period",
+      "title": "2008 – 2015"
+    },
+    {
+      "type": "date",
+      "info": "Aug 2008 – Jun 2015",
+      "title": "Technical Lead / Solutions Architect",
+      "jobTitle": "ICF International | Richmond, Virginia",
+      "bullets": [
+        "Technical lead on 90+ DoD and US Navy websites, including large-scale content migrations",
+        "Led rebuilds for major nonprofit and financial services clients",
+        "Architected enterprise CMS solutions (AEM, WordPress, Oracle WCC, Drupal) for federal and Fortune 500 clients"
+      ]
+    },
+    {
+      "type": "period",
+      "title": "2015 – 2018"
+    },
+    {
+      "type": "date",
+      "info": "Jun 2015 – Jan 2018",
+      "title": "Senior Software Engineer",
+      "jobTitle": "Iconfinder.com | Copenhagen, Denmark",
+      "bullets": [
+        "Scaled ingestion pipelines to handle 10K+ products/day, growing inventory from 500K to 6M",
+        "Helped drive $1M+ annual revenue growth with a team of 5",
+        "Represented team at design/tech industry events"
+      ]
+    },
+    {
+      "type": "factoid",
+      "info": "2015-2018",
+      "title": "Life in Copenhagen",
+      "content": "<p>Moving to Denmark for Iconfinder was my first experience living and working in Europe. I learned to navigate a new culture, work with a fully distributed international team, and appreciate the Danish concept of <em>hygge</em> — finding comfort and contentment in simple things.</p><p class=\"factoid-note\">It planted a seed: maybe my wife and I didn't have to stay in one place. Maybe we could build our lives anywhere. That seed is now growing into our move to France.</p>"
+    },
+    {
+      "type": "narrative",
+      "info": "Enterprise Scale",
+      "title": "From Developer to Architect",
+      "content": "<p>My CMS and web work opened the door to enterprise consulting at ICF, where I led major rebuilds for federal and Fortune 500 clients. Working with Adobe Experience Manager, WordPress, Oracle WebCenter, and Drupal taught me how to think at scale — migrating content, architecting solutions, and leading technical teams across 90+ websites.</p><p>Joining Iconfinder in Denmark was a shift from enterprise to startup — but it was exactly what I needed. I helped scale their platform from half a million to over six million assets, processing thousands of products daily, and contributing to over $1M in annual revenue growth. It reminded me why I fell in love with building software: the ability to create something that grows and impacts real people.</p>"
+    },
+    {
+      "type": "period",
+      "title": "2018 – 2020"
+    },
+    {
+      "type": "date",
+      "info": "Jan 2018 – Mar 2020",
+      "title": "Independent Consultant",
+      "jobTitle": "Web & Cloud Solutions | Richmond, Virginia",
+      "bullets": [
+        "Managed a team of 4 devs to build and launch VectorIcons.net, a multi-vendor e-commerce marketplace",
+        "Built a serverless, event-driven pipeline integrating AWS and Dropbox for a high-volume UK creative agency, aggregating, converting, and organizing 200–300 POS proofs per day",
+        "Built e-commerce platforms, CMS integrations, and creative tooling (Figma/Adobe plugins) using Node.js and React"
+      ]
+    },
+    {
+      "type": "narrative",
+      "info": "Side Project",
+      "title": "VectorIcons.net",
+      "content": "<p>During my consulting years, I built <strong>VectorIcons.net</strong> — a multi-vendor marketplace for vector icons and illustrations. It's built on Next.js and Express, deployed on AWS with a serverless image-processing pipeline I designed myself.</p><p>More than just a business, it's a living lab where I test new technologies, architectures, and ideas — all centered around making creative work faster and more enjoyable. It's also a reminder of that lesson from my CMS days: don't walk away from a good idea too soon.</p>"
+    },
+    {
+      "type": "period",
+      "title": "2020 – Present"
+    },
+    {
+      "type": "factoid",
+      "info": "2024-2025",
+      "title": "Next Chapter: France",
+      "content": "<p>I've been studying French since I was 15 — first in high school, then independently for decades. My wife and I have been planning our move to France for years, and it's finally happening in 2025.</p><p>This move represents everything I've learned: build systems that let you work from anywhere, never stop learning, and pursue dreams even when they take decades to realize.</p><p class=\"factoid-note\">Je parle français — pas couramment, mais j'y travaille chaque jour !</p>"
+    },
+    {
+      "type": "date",
+      "info": "Mar 2020 – Present",
+      "title": "Senior Software Engineer",
+      "jobTitle": "Capital One Finance | Richmond, Virginia",
+      "bullets": [
+        "Engineered AWS IAM auditing solutions to maintain least-privileged security posture, using event-driven Go applications with SQS, Lambda, and Step Functions to monitor over 1M IAM roles nightly",
+        "Managed data pipelines streaming millions of rows daily",
+        "Built custom Go tooling to improve developer experience",
+        "Led code reviews, Agile ceremonies, and participated in quarterly on-call rotations",
+        "Managed multiple application stacks in CloudFormation Templates"
+      ]
+    },
+    {
+      "type": "narrative",
+      "info": "Reflection",
+      "title": "The Invisible Work",
+      "content": "<p>My work at Capital One is technically challenging and important. Ensuring security compliance across over a million IAM roles is critical infrastructure work that keeps systems safe and running smoothly.</p><p>But most of what we build is invisible. No one sees it, no one touches it directly. I miss creating things that people <em>see and feel</em> — tools that make their daily work easier, more intuitive, more human. That's why I keep building VectorIcons.net. That's why Expensify resonates with me.</p>"
+    },
+    {
+      "type": "narrative",
+      "info": "The Perfect Fit",
+      "title": "Why Expensify",
+      "content": "<p>Expensify's mission — helping people spend less time on tedious work and more on what matters — speaks to the very core of what drives me. You're solving the same problem I've been obsessed with my whole career: freeing people to focus on creativity, impact, and meaning.</p><p>From automating catalog production to building IAM auditing systems, I've always been drawn to eliminating friction and letting people do what they do best. That's what Expensify does at scale — and I want to be part of that mission.</p><p>On a personal level, my wife and I are moving to <strong>France</strong> next year — a dream we've been building toward for years. I've studied French since I was 15 (currently around B1/B2 level), and I'm excited by the idea of joining a globally distributed team that values autonomy, curiosity, and impact over geography.</p>"
+    },
+    {
+      "type": "narrative",
+      "info": "Available Now",
+      "title": "Let's Build Something Great",
+      "content": "<p>I'd love the chance to bring my experience and builder's mindset to Expensify — helping to craft tools that make people's work easier, more intuitive, and more human.</p><p><strong>I'm available to start immediately.</strong></p><p>Thank you for considering my application.</p><p class=\"signature\">– Scott Lewis</p>"
+    }
+  ]
+}
