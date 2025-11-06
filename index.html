@@ -97,6 +97,53 @@
         .date-badge {
             background: linear-gradient(135deg, #06b6d4, #0891b2);
         }
+
+        .timeline-dot-factoid {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid #f59e0b;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+        }
+
+        .factoid-node {
+            border-left: 4px solid #f59e0b;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        }
+
+        .factoid-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-dot-factoid {
+                left: 30px;
+            }
+        }
+
+        .timeline-item.hidden-filter {
+            display: none;
+        }
+
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            transform: scale(1.05);
+        }
+
+        .filter-controls {
+            position: sticky;
+            top: 20px;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 scroll-smooth">
@@ -138,11 +185,46 @@
     <!-- Timeline Section -->
     <section class="relative py-20 px-4">
         <div class="max-w-6xl mx-auto">
+
+            <!-- Filter Controls -->
+            <div class="filter-controls bg-white/90 rounded-lg p-6 mb-12 card-shadow">
+                <div class="text-center mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Customize Your View</h3>
+                    <p class="text-sm text-gray-600">Toggle different layers of my career story</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button onclick="toggleFilter('date')"
+                            class="filter-btn active bg-cyan-500 hover:bg-cyan-600 text-white px-5 py-2.5 rounded-lg font-semibold shadow-md flex items-center gap-2"
+                            id="filter-date">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                        </svg>
+                        Jobs & Experience
+                    </button>
+                    <button onclick="toggleFilter('narrative')"
+                            class="filter-btn active bg-purple-500 hover:bg-purple-600 text-white px-5 py-2.5 rounded-lg font-semibold shadow-md flex items-center gap-2"
+                            id="filter-narrative">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                        </svg>
+                        Story & Reflections
+                    </button>
+                    <button onclick="toggleFilter('factoid')"
+                            class="filter-btn active bg-amber-500 hover:bg-amber-600 text-white px-5 py-2.5 rounded-lg font-semibold shadow-md flex items-center gap-2"
+                            id="filter-factoid">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        Personal Projects
+                    </button>
+                </div>
+            </div>
+
             <!-- Timeline Line -->
             <div class="timeline-line hidden md:block"></div>
 
             <!-- The Through-Line -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="narrative">
                 <div class="timeline-dot hidden md:block"></div>
                 <div class="md:w-1/2 md:ml-auto md:pl-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
@@ -165,7 +247,7 @@
             </div>
 
             <!-- From Artist to Engineer -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="narrative">
                 <div class="timeline-dot hidden md:block"></div>
                 <div class="md:w-1/2 md:pr-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
@@ -190,8 +272,40 @@
                 </div>
             </div>
 
+            <!-- FACTOID: QuarkXPress in Browser -->
+            <div class="timeline-item mb-32 relative" data-type="factoid">
+                <div class="timeline-dot-factoid hidden md:block"></div>
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                    <div class="rounded-lg p-8 card-shadow factoid-node">
+                        <div class="factoid-badge text-white px-3 py-1.5 rounded-lg inline-block mb-4">
+                            <div class="text-xs font-semibold">~1998-2000</div>
+                        </div>
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop"
+                                 alt="QuarkXPress Browser Project"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                            <svg class="w-6 h-6 inline-block text-amber-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/>
+                            </svg>
+                            QuarkXPress in the Browser
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            Before React, before modern web frameworks, I was experimenting with building QuarkXPress-like document
+                            layouts directly in the browser. This was the era of IE6 and table-based layouts — the idea of rich
+                            document editing in a browser was considered impossible.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed italic text-sm">
+                            The PoC never shipped, but it taught me to question conventional wisdom about what browsers could do.
+                            Ten years later, tools like Google Docs proved the concept at scale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <!-- DATE NODE: Catalyst Workflow Solutions -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="date">
                 <div class="timeline-dot-date hidden md:block"></div>
                 <div class="md:w-1/2 md:ml-auto md:pl-12">
                     <div class="bg-white rounded-lg p-8 card-shadow date-node">
@@ -234,7 +348,7 @@
             </div>
 
             <!-- DATE NODE: Cavalier TV & Telephone -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="date">
                 <div class="timeline-dot-date hidden md:block"></div>
                 <div class="md:w-1/2 md:pr-12">
                     <div class="bg-white rounded-lg p-8 card-shadow date-node">
@@ -273,7 +387,7 @@
             </div>
 
             <!-- From Builder to Problem Solver -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="narrative">
                 <div class="timeline-dot hidden md:block"></div>
                 <div class="md:w-1/2 md:ml-auto md:pl-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
@@ -304,7 +418,7 @@
             </div>
 
             <!-- DATE NODE: ICF International -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="date">
                 <div class="timeline-dot-date hidden md:block"></div>
                 <div class="md:w-1/2 md:pr-12">
                     <div class="bg-white rounded-lg p-8 card-shadow date-node">
@@ -343,7 +457,7 @@
             </div>
 
             <!-- DATE NODE: Iconfinder -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="date">
                 <div class="timeline-dot-date hidden md:block"></div>
                 <div class="md:w-1/2 md:ml-auto md:pl-12">
                     <div class="bg-white rounded-lg p-8 card-shadow date-node">
@@ -381,8 +495,40 @@
                 </div>
             </div>
 
+            <!-- FACTOID: Living in Copenhagen -->
+            <div class="timeline-item mb-32 relative" data-type="factoid">
+                <div class="timeline-dot-factoid hidden md:block"></div>
+                <div class="md:w-1/2 md:pr-12">
+                    <div class="rounded-lg p-8 card-shadow factoid-node">
+                        <div class="factoid-badge text-white px-3 py-1.5 rounded-lg inline-block mb-4">
+                            <div class="text-xs font-semibold">2015-2018</div>
+                        </div>
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=800&h=400&fit=crop"
+                                 alt="Copenhagen"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                            <svg class="w-6 h-6 inline-block text-amber-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            Life in Copenhagen
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            Moving to Denmark for Iconfinder was my first experience living and working in Europe. I learned to navigate
+                            a new culture, work with a fully distributed international team, and appreciate the Danish concept of
+                            <em>hygge</em> — finding comfort and contentment in simple things.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed italic text-sm">
+                            It planted a seed: maybe my wife and I didn't have to stay in one place. Maybe we could build our lives
+                            anywhere. That seed is now growing into our move to France.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <!-- From Developer to Architect -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="narrative">
                 <div class="timeline-dot hidden md:block"></div>
                 <div class="md:w-1/2 md:pr-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
@@ -412,7 +558,7 @@
             </div>
 
             <!-- DATE NODE: Independent Consultant -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="date">
                 <div class="timeline-dot-date hidden md:block"></div>
                 <div class="md:w-1/2 md:ml-auto md:pl-12">
                     <div class="bg-white rounded-lg p-8 card-shadow date-node">
@@ -451,7 +597,7 @@
             </div>
 
             <!-- VectorIcons.net -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="narrative">
                 <div class="timeline-dot hidden md:block"></div>
                 <div class="md:w-1/2 md:pr-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
@@ -478,8 +624,42 @@
                 </div>
             </div>
 
+            <!-- FACTOID: Preparing for France -->
+            <div class="timeline-item mb-32 relative" data-type="factoid">
+                <div class="timeline-dot-factoid hidden md:block"></div>
+                <div class="md:w-1/2 md:ml-auto md:pl-12">
+                    <div class="rounded-lg p-8 card-shadow factoid-node">
+                        <div class="factoid-badge text-white px-3 py-1.5 rounded-lg inline-block mb-4">
+                            <div class="text-xs font-semibold">2024-2025</div>
+                        </div>
+                        <div class="mb-6">
+                            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=400&fit=crop"
+                                 alt="France"
+                                 class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                            <svg class="w-6 h-6 inline-block text-amber-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd"/>
+                            </svg>
+                            Next Chapter: France
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            I've been studying French since I was 15 — first in high school, then independently for decades.
+                            My wife and I have been planning our move to France for years, and it's finally happening in 2025.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            This move represents everything I've learned: build systems that let you work from anywhere, never stop
+                            learning, and pursue dreams even when they take decades to realize.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed italic text-sm">
+                            Je parle français — pas couramment, mais j'y travaille chaque jour !
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <!-- DATE NODE: Capital One -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="date">
                 <div class="timeline-dot-date hidden md:block"></div>
                 <div class="md:w-1/2 md:ml-auto md:pl-12">
                     <div class="bg-white rounded-lg p-8 card-shadow date-node">
@@ -530,7 +710,7 @@
             </div>
 
             <!-- Capital One Reflection -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="narrative">
                 <div class="timeline-dot hidden md:block"></div>
                 <div class="md:w-1/2 md:pr-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
@@ -557,7 +737,7 @@
             </div>
 
             <!-- Why Expensify -->
-            <div class="timeline-item mb-32 relative">
+            <div class="timeline-item mb-32 relative" data-type="narrative">
                 <div class="timeline-dot hidden md:block"></div>
                 <div class="md:w-1/2 md:ml-auto md:pl-12">
                     <div class="bg-white rounded-lg p-8 card-shadow">
@@ -594,7 +774,7 @@
             </div>
 
             <!-- Closing -->
-            <div class="timeline-item mb-20 relative">
+            <div class="timeline-item mb-20 relative" data-type="narrative">
                 <div class="timeline-dot hidden md:block" style="border-color: #ec4899;"></div>
                 <div class="md:w-1/2 md:pr-12">
                     <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg p-8 card-shadow text-white">
@@ -663,6 +843,39 @@
                 observer.observe(item);
             });
         });
+
+        // Filter toggle functionality
+        const activeFilters = new Set(['date', 'narrative', 'factoid']);
+
+        function toggleFilter(type) {
+            const button = document.getElementById(`filter-${type}`);
+
+            if (activeFilters.has(type)) {
+                activeFilters.delete(type);
+                button.classList.remove('active');
+                button.style.opacity = '0.4';
+            } else {
+                activeFilters.add(type);
+                button.classList.add('active');
+                button.style.opacity = '1';
+            }
+
+            updateVisibleItems();
+        }
+
+        function updateVisibleItems() {
+            const allItems = document.querySelectorAll('.timeline-item[data-type]');
+
+            allItems.forEach(item => {
+                const itemType = item.getAttribute('data-type');
+
+                if (activeFilters.has(itemType)) {
+                    item.classList.remove('hidden-filter');
+                } else {
+                    item.classList.add('hidden-filter');
+                }
+            });
+        }
     </script>
 </body>
 </html>

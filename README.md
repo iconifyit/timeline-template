@@ -5,16 +5,19 @@ A beautiful, single-page, scrollable career timeline built with Tailwind CSS and
 ## Features
 
 - **Smooth Scroll Animations**: Timeline items fade in as you scroll down the page
-- **Dual Timeline Structure**:
-  - **Date Nodes**: Cyan-colored cards with dates and job details from your resume
-  - **Narrative Nodes**: Story-driven cards that weave context and personality between jobs
+- **Interactive Filter Toggle**: Show/hide different types of timeline content
+- **Three Timeline Layers**:
+  - **Date Nodes** (Cyan): Formal job experience with dates and achievements
+  - **Narrative Nodes** (Purple/Pink): Story-driven reflections and context
+  - **Factoid Nodes** (Amber): Personal projects and interesting tidbits
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
 - **Modern UI**: Built with Tailwind CSS for a clean, professional look
 - **Alternating Layout**: Timeline events alternate between left and right for visual interest
 - **Placeholder Images**: Uses Unsplash images that you can easily replace with your own
 - **Gradient Accents**: Eye-catching gradient colors for headers and highlights
 - **Interactive Cards**: Hover effects on timeline cards for better engagement
-- **Visual Hierarchy**: Distinct styling for date nodes (cyan border + gradient badge) vs narrative nodes (purple/pink accents)
+- **Visual Hierarchy**: Distinct styling for each node type with unique dots, borders, and colors
+- **Sticky Filter Controls**: Filter buttons stay accessible as you scroll
 
 ## Quick Start
 
@@ -41,9 +44,19 @@ Replace with your own images:
   ```
 - **Option 3**: Keep using Unsplash but search for better matches at [unsplash.com](https://unsplash.com)
 
-### Understanding the Two Types of Nodes
+## Interactive Filter Toggle
 
-The timeline uses two distinct types of nodes:
+The timeline includes a sticky filter control panel at the top that lets you toggle different layers of content. Click any button to show/hide that type of node:
+
+- **Jobs & Experience** (Cyan): Official work history with dates and achievements
+- **Story & Reflections** (Purple): Narrative context that connects the jobs
+- **Personal Projects** (Amber): Side projects and personal factoids
+
+All three layers are visible by default. You can toggle any combination to customize your view.
+
+### Understanding the Three Types of Nodes
+
+The timeline uses three distinct types of nodes:
 
 **1. Date Nodes (Job Experience)**
 - Cyan/teal colored with gradient date badges
@@ -51,12 +64,22 @@ The timeline uses two distinct types of nodes:
 - Contains: dates, company, location, job title, and bullet points
 - Uses the `date-node` class for the cyan left border
 - Uses the `timeline-dot-date` class for the larger timeline dot
+- Data attribute: `data-type="date"`
 
 **2. Narrative Nodes (Story Elements)**
 - Purple, pink, orange, or other accent colors
 - Standard blue timeline dots
 - Contains: stories, reflections, and context that connect the jobs
 - Uses standard `timeline-dot` class
+- Data attribute: `data-type="narrative"`
+
+**3. Factoid Nodes (Personal Projects & Tidbits)**
+- Amber/yellow gradient background
+- Smaller amber timeline dots with glow effect
+- Contains: personal projects, side interests, and human elements
+- Uses the `factoid-node` class for the amber styling
+- Uses the `timeline-dot-factoid` class for the amber timeline dot
+- Data attribute: `data-type="factoid"`
 
 ### Modifying Content
 
@@ -77,7 +100,7 @@ The timeline uses two distinct types of nodes:
 
 **Narrative Node Structure:**
 ```html
-<div class="timeline-item mb-32 relative">
+<div class="timeline-item mb-32 relative" data-type="narrative">
     <div class="timeline-dot hidden md:block"></div>
     <div class="md:w-1/2 md:pr-12">
         <div class="bg-white rounded-lg p-8 card-shadow">
@@ -87,8 +110,24 @@ The timeline uses two distinct types of nodes:
 </div>
 ```
 
+**Factoid Node Structure:**
+```html
+<div class="timeline-item mb-32 relative" data-type="factoid">
+    <div class="timeline-dot-factoid hidden md:block"></div>
+    <div class="md:w-1/2 md:ml-auto md:pl-12">
+        <div class="rounded-lg p-8 card-shadow factoid-node">
+            <div class="factoid-badge text-white px-3 py-1.5 rounded-lg inline-block mb-4">
+                <div class="text-xs font-semibold">~1998-2000</div>
+            </div>
+            <!-- Image, icon, factoid content -->
+        </div>
+    </div>
+</div>
+```
+
 - **Left-aligned items**: Use `md:pr-12` (no `md:ml-auto`)
 - **Right-aligned items**: Use `md:ml-auto md:pl-12`
+- **IMPORTANT**: Always include the correct `data-type` attribute for filtering to work
 
 ### Adding New Timeline Events
 
