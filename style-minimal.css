@@ -65,8 +65,8 @@ a:hover {
 
 .example-title {
   text-align: center;
-  margin-bottom: 60px;
-  padding: 3em 0 2em 0;
+  margin-bottom: 20px;
+  padding: 2em 0 1em 0;
   border-bottom: 1px solid #E4EAEC;
 }
 .example-title h2 {
@@ -84,47 +84,53 @@ a:hover {
 ==================================*/
 .filter-controls {
   text-align: center;
-  margin-bottom: 50px;
-  padding: 20px;
-  background: #F9FAFB;
-  border-radius: 4px;
-  border: 1px solid #E4EAEC;
+  margin-bottom: 30px;
+  padding: 15px;
+  background: transparent;
+  border-radius: 0;
+  border: none;
 }
 
 .filter-btn {
-  background: #FFF;
-  border: 2px solid #CCD5DB;
-  color: #768390;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 4px;
-  font-size: 13px;
+  background: transparent;
+  border: none;
+  color: #99A5B0;
+  padding: 8px 15px;
+  margin: 0 10px;
+  border-radius: 0;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-btn i {
+  font-size: 16px;
 }
 
 .filter-btn:hover {
-  border-color: #FF6B6B;
-  color: #FF6B6B;
+  color: #3D4351;
 }
 
 .filter-btn.active {
-  background: #FF6B6B;
-  border-color: #FF6B6B;
-  color: #FFF;
+  color: #3D4351;
 }
 
 .filter-btn.active[data-type="date"] {
-  background: #4A9EFF;
-  border-color: #4A9EFF;
+  color: #4A9EFF;
+}
+
+.filter-btn.active[data-type="narrative"] {
+  color: #FF6B6B;
 }
 
 .filter-btn.active[data-type="factoid"] {
-  background: #FFA94D;
-  border-color: #FFA94D;
+  color: #FFA94D;
 }
 
 /*==================================
@@ -241,6 +247,30 @@ a:hover {
 .timeline-content ul li {
   margin-bottom: 8px;
   line-height: 1.6;
+}
+
+/* Timeline content icons */
+.timeline-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeline-title i {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.timeline-item[data-type="date"] .timeline-title i {
+  color: #4A9EFF;
+}
+
+.timeline-item[data-type="narrative"] .timeline-title i {
+  color: #FF6B6B;
+}
+
+.timeline-item[data-type="factoid"] .timeline-title i {
+  color: #FFA94D;
 }
 
 /* Job title styling */
